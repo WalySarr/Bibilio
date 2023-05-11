@@ -27,7 +27,7 @@
         </div>
         <div class="my-3">
             <input type="text" placeholder="Niveau du Theme" class="form-control" name="niveau"
-                value="{{ old('niveau') }}">
+                value="{{ $theme->niveau }}">
         </div>
         <div class="my-3">
             <button class="btn btn-outline-success">Editer</button>
