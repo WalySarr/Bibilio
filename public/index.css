@@ -1,0 +1,35 @@
+body {
+    font-family: "jetbrains mono";
+}
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    padding-top: 0.755em;
+    color: wheat !important;
+}
+
+.dataTables_length label,
+.dataTables_filter label,
+.dataTables_wrapper .dataTables_filter input {
+    color: rgb(255, 255, 255);
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background: white;
+}
+
+.dataTables_info {
+    color: white;
+}
+
+.dataTables_wrapper {
+    margin: 2px 0;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid white;
+}

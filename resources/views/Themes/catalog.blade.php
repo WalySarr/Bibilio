@@ -12,27 +12,6 @@
 @endsection
 
 @section('content')
-    <style>
-        .table-hover tbody tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        .dataTables_length label,
-        .dataTables_filter label,
-        .dataTables_wrapper .dataTables_filter input
-        {
-
-            color: rgb(255, 255, 255);
-            /* Changer la couleur de l'écriture */
-        }
-
-        .dataTables_wrapper .dataTables_length select {
-            background: white;
-        }
-        .dataTables_wrapper{
-            margin: 2px 0;
-        }
-    </style>
     @if (session('updateSuccess'))
         <script>
             Swal.fire(
@@ -42,8 +21,8 @@
             )
         </script>
     @endif
-    <table class="table table-stripped table-hover my-1 rounded text-center text-light" id="myTable">
-        <thead class="fs-5">
+    <table class="table table-stripped table-hover my-1 rounded text-light" id="myTable">
+        <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nom du Thème</th>
