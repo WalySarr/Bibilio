@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Docs extends Model
 {
+    protected $fillable = ['titre', 'description', 'chemin', 'theme_id'];
     use HasFactory;
 }

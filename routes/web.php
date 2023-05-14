@@ -28,4 +28,5 @@ Route::put('/themes/{id}/update', [ThemeController::class, 'update'])->name('upd
 
 // Ces routes concernent juste les documents
 Route::get('/documents', [DocumentsController::class, 'index'])->name('documents.index');
-Route::get('/documents/create', [DocumentsController::class, 'create'])->name('documents.create');
+Route::get('/documents/create', [DocumentsController::class, 'show'])->name('documents.show');
+Route::post('/documents/create', [DocumentsController::class, 'create'])->name('documents.create');

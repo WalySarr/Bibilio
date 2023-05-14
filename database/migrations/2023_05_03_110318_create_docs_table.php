@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titre')->unique();
             $table->longText('description')->nullable();
-            $table->string('chemin');
+            $table->string('chemin')->nullable();
             $table->foreignId('theme_id')->constrained();
             $table->timestamps();
         });

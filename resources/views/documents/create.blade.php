@@ -1,7 +1,18 @@
 @extends('layout.layout')
-@section('titre', 'Ajouter un nouveau Theme')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.all.min.js"></script>
+@section('titre', 'Ajouter un nouveau Document')
 @section('content')
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="{{ route('documents.create')}}" method="post" enctype="multipart/form-data">
+        @csrf
+        @if (session('addSuccess'))
+            <script>
+            Swal.fire(
+                'Document Ajouté',
+                '{{ session('addSuccess') }}',
+                'success'
+            )
+        </script>
+        @endif
         <div class="my-2">
             <label for="" class="label-form">Titre</label>
             <input type="text" class="form-control" placeholder="Saisir le Titre" name="titre">
@@ -13,6 +24,10 @@
         <div class="my-2 form-floating">
             <textarea name="description" id="floatingTextArea" class="form-control" placeholder="Laissez un commentaire"></textarea>
             <label for="floatingTextArea" class="label-form">Description</label>
+        </div>
+        <div class="my-2">
+            <label for="" class="label-form">Theme</label>
+            <input type="text" class="form-control" placeholder="Saisir le Titre" name="theme_id" value="1">
         </div>
         <div class="my-2">
             <button class="btn-sm btn btn-primary">Envoyer</button>
