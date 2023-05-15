@@ -28,5 +28,11 @@ Route::put('/themes/{id}/update', [ThemeController::class, 'update'])->name('upd
 
 // Ces routes concernent juste les documents
 Route::get('/documents', [DocumentsController::class, 'index'])->name('documents.index');
-Route::get('/documents/create', [DocumentsController::class, 'show'])->name('documents.show');
+Route::get('/documents/create', [DocumentsController::class, 'add'])->name('documents.add');
 Route::post('/documents/create', [DocumentsController::class, 'create'])->name('documents.create');
+Route::get('/documents/show', [DocumentsController::class, 'show'])->name('documents.show');
+Route::get('/documents/consult/{id}', [DocumentsController::class, 'consult'])->name('documents.consult');
+Route::delete('documents/{id}', [DocumentsController::class, 'delete'])->name('documents.delete');
+Route::get('/documents/{id}/edit', [DocumentsController::class, 'edit'])->name('documents.edit');
+Route::put('/documents/{id}/', [DocumentsController::class, 'update'])->name('documents.update');
+

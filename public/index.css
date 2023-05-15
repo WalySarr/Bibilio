@@ -33,3 +33,7 @@ body {
 table.dataTable.no-footer {
     border-bottom: 1px solid white;
 }
+a#myTable_previous, #myTable_next, .dataTables_wrapper .dataTables_paginate {
+    color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+}

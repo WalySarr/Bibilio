@@ -4,7 +4,7 @@
     Edition du Theme
 @endsection
 @section('content')
-    <form action="{{ route('update', ['id' => $theme->id]) }}" method="post">
+    <form class="update-form" action="{{ route('update', ['id' => $theme->id]) }}" method="post">
         @csrf
         @method('PUT')
         @if ($errors->any())
@@ -30,7 +30,7 @@
                 value="{{old('niveau') ? : $theme->niveau}}">
         </div>
         <div class="my-3">
-            <button class="btn btn-outline-success">Editer</button>
+            <button class="btn btn-outline-success" onclick="updateFormConfirmation()">Editer</button>
         </div>
     </form>
 @endsection

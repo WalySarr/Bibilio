@@ -20,7 +20,8 @@
               <li><a class="dropdown-item" href="{{url('themes')}}">Ajouter Theme</a></li>
             <li><a class="dropdown-item" href="{{url('catalog')}}">Liste des Themes</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{{ route('documents.show') }}">Ajouter un Documents</a></li>
+            <li><a class="dropdown-item" href="{{ route('documents.add') }}">Ajouter un Documents</a></li>
+            <li><a class="dropdown-item" href="{{ route('documents.show') }}">Liste des Documents</a></li>
           </ul>
         </li>
         <li class="nav-item">
