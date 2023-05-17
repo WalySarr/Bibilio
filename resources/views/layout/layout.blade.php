@@ -22,7 +22,7 @@
     @yield('supply')
     <div class="container">
         <div class="row mb-2">
-            <div class="col-md-8 mx-auto shadow-lg bg-dark rounded">
+            <div class="col-md-10 mx-auto shadow-lg bg-dark rounded">
                 @yield('content')
             </div>
         </div>

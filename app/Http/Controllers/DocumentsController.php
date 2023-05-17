@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Docs;
+use App\Models\Theme;
+use GuzzleHttp\Psr7\UploadedFile;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 
 class DocumentsController extends Controller
@@ -12,11 +15,22 @@ class DocumentsController extends Controller
     }
 
     public function add(){
-        return view('documents.create');
+        $themes = Theme::all();
+        return view('documents.create', compact('themes'));
     }
 
     public function create(Request $request){
-        Docs::create($request->all());
+        $request->validate([
+            'titre' => 'required|min:3',
+            'chemin' => 'required|mimes:pdf,txt',
+            'theme_id' => 'required',
+
+        ]);
+        $data = $request->all();
+        /** @var UploadedFile $imagePath */
+        $imagePath = $data['chemin']->store('images', 'public');
+        $data['chemin'] = $imagePath;
+        Docs::create($data);
         return redirect()->back()->with('addSuccess', 'Le document a été ajouté avec succés');
     }
 

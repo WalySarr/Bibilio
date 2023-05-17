@@ -29,8 +29,8 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nom du Documents</th>
-                <th scope="col">Titre</th>
+                <th scope="col">Nom du Document</th>
+                <th scope="col">Description</th>
                 <th scope="col">Theme</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
@@ -42,8 +42,10 @@
                     <td scope='row'>{{ $doc->id }}</td>
                     <td>{{ $doc->titre }}</td>
                     <td>{{ $doc->description }}</td>
-                    <td>{{ $doc->theme_id }}</td>
-                    <td></td>
+                    <td>{{ $doc->theme->theme }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-success" href="{{ asset("storage/$doc->chemin") }}"><i class="bi bi-cloud-download"></i></a>
+                    </td>
                     <td>
                         <a href="{{ route('documents.consult', ['id' => $doc->id]) }}" class="btn btn-outline-primary">
                             <i class="bi bi-eye-fill"></i>
